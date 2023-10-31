@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quote Machine</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script>
+      function play(str){
+
+        if (str === "q" || str === "Q") {
+          document.getElementById('display').innerText = "You can overcome any adversary no matter how bizarre their powers may seem there is always a way – Mortal Kombat (1995)";
+        } else if (str === "w" || str === "W"){
+          document.getElementById('display').innerText = "Never give up and good luck will find you – Falkor in The NeverEnding Story (1984)";
+        } else if (str === "e" || str === "E"){
+          document.getElementById('display').innerText = "I don't know there's something about today maybe it's a day for a miracle – the NoteBook";
+        } else if (str === "a" || str === "A"){
+          document.getElementById('display').innerText = "Okay guys we're going to the moon! – Apollo 13";
+        } else if (str === "s" || str === "S"){
+          document.getElementById('display').innerText = "Calm and keep calm that's most important if you're going to win it's not easy to appear calm but if you do then you'll win calm is natural remember that  – Mystery of Chess Boxing";
+        } else if (str === "d" || str === "D"){
+          document.getElementById('display').innerText = "You only live once you got to give it your best shot – Bronco Billy";
+        } else if (str === "z" || str === "Z"){
+          document.getElementById('display').innerText = "I know it's almost impossible to succeed but who cares really the answer must be in the attempt – Before Sunrise";
+        } else if (str === "x" || str === "X"){
+          document.getElementById('display').innerText = "The word impossible is only found in a dictionary of fools – The Black Hole (1979)";
+        } else if (str === "c" || str === "C"){
+          document.getElementById('display').innerText = "Dreams can begin small too  – Shark Tale";
+        }
+
+        var audio = document.getElementById(str);
+        audio.play();
+      }
+
+      window.document.onkeyup = function(event) {
+        let keystroke = event.key
+        if (keystroke === "q" || keystroke === "Q"){
+          play("Q");
+        } else if (keystroke === "w" || keystroke === "W"){
+          play("W");
+        } else if (keystroke === "e" || keystroke === "E"){
+          play("E");
+        } else if (keystroke === "a" || keystroke === "A"){
+          play("A");
+        } else if (keystroke === "s" || keystroke === "S"){
+          play("S");
+        } else if (keystroke === "d" || keystroke === "D"){
+          play("D");
+        } else if (keystroke === "z" || keystroke === "Z"){
+          play("Z");
+        } else if (keystroke === "x" || keystroke === "X"){
+          play("X");
+        } else if (keystroke === "c" || keystroke === "C"){
+          play("C");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container" id="drum-machine">
+    <h1 class="text-center">Quote Machine</h1>
+    <div class="card my-3">
+      <div classe="card-body">
+        <div class="text-center" id='display'>display currently empty</div>
+      </div>
+    </div>
+    <!-- instead of btn-block on every button replaced with the below code -->
+    <div class="d-grid gap-2">
+    <button class="drum-pad btn btn-primary" id="drum-0" onclick="play('Q')">
+      Q
+      <audio src="./clip/Q_mortal_kombat.mp3" class="clip" id="Q">
+    </button>
+    <button class="drum-pad btn btn-primary" id="drum-1" onclick="play('W')">
+      W
+      <audio src="./clip/W_falkor_in_the_neverending_story.mp3" class="clip" id="W">
+    </button>
+    <button class="drum-pad btn btn-primary" id="drum-2" onclick="play('E')">
+      E
+      <audio src="./clip/E_the_notebook.mp3" class="clip" id="E">
+    </button>
+    <button class="drum-pad btn btn-primary" id="drum-3" onclick="play('A')">
+      A
+      <audio src="./clip/A_apollo_13.mp3" class="clip" id="A">
+    </button>
+    <button class="drum-pad btn btn-primary" id="drum-4" onclick="play('S')">
+      S
+      <audio src="./clip/S_mystery_of_chess_boxing.mp3" class="clip" id="S">
+    </button>
+    <button class="drum-pad btn btn-primary" id="drum-5" onclick="play('D')">
+      D
+      <audio src="./clip/D_bronco_billy.mp3" class="clip" id="D">
+    </button>
+    <button class="drum-pad btn btn-primary" id="drum-6" onclick="play('Z')">
+      Z
+      <audio src="./clip/Z_before_sunrise.mp3" class="clip" id="Z">
+    </button>
+    <button class="drum-pad btn btn-primary" id="drum-7" onclick="play('X')">
+      X
+      <audio src="./clip/X_the_black_hole.mp3" class="clip" id="X">
+    </button>
+    <button class="drum-pad btn btn-primary" id="drum-8" onclick="play('C')">
+      C
+      <audio src="./clip/C_shark_tale.mp3" class="clip" id="C">
+    </button>
+  </div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
